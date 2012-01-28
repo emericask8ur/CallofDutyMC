@@ -23,44 +23,34 @@ public class PL extends PlayerListener{
 		World w= p.getWorld();
 		ItemStack i = new ItemStack(Material.ARROW,1);
 		if(on){
-		if(event.getAction() == Action.LEFT_CLICK_AIR){
-			if(p.getItemInHand().getType() == Material.STICK){
+			if(event.getAction() == Action.LEFT_CLICK_AIR){
+				if(p.getItemInHand().getType() == Material.STICK){
 					p.shootArrow();
 					p.getInventory().removeItem(i);
 					w.createExplosion(p.getLocation(), -0);
-					}
+				}
 				if(auto){
-					p.shootArrow();
-					p.shootArrow();
-					p.shootArrow();
-					p.shootArrow();
+					shootArrows(p, 5);
 					w.createExplosion(p.getLocation(), -2);
-					}
-			}
-		}
-				if(mini){
-					if(event.getAction()==Action.RIGHT_CLICK_AIR){
-						if(p.getItemInHand().getType()==Material.STICK){
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							p.shootArrow();
-							w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
-							p.getInventory().removeItem(i);
-							w.dropItem(p.getLocation(),i);
-					}
-					}
-					
 				}
 			}
+			else if(event.getAction()==Action.RIGHT_CLICK_AIR){
+				if(mini){
+					if(p.getItemInHand().getType()==Material.STICK){
+						shootArrows(p, 12);
+						w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
+						p.getInventory().removeItem(i);
+						w.dropItem(p.getLocation(),i);
+					}
+				}
+			}
+		}
 	}
+	private void shootArrows(Player player, int amount){
+		for(int i = 0;i<amount;i++){
+			p.shootArrow();
+		}
+	}
+}
 
 
