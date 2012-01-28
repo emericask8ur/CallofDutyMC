@@ -23,14 +23,25 @@ public class Main extends JavaPlugin{
 	private final EL EntityListener = new EL();
 	private final PL PlayerListener = new PL();
 	
+	/*
+	 * @return Plugin Version
+	 */
 	public String getVersion(){
-		
 		return this.getDescription().getVersion();
 	}
+	
+	/*
+	 * @return Plugin Name
+	 */
 	
 	public String getName(){
 		return "[" + this.getDescription().getName() + "]";
 	}
+	
+	/*
+	 * @return Plugin Info
+	 */
+	
 	public String getInfo(){
 		return getName() + " " + getVersion();
 	}
