@@ -16,18 +16,16 @@ public class EL extends EntityListener{
 		Location loc = e.getLocation();
 		if(e instanceof org.bukkit.entity.Egg){
 			if(gran){
-			w.createExplosion(loc, 2);
-		  }
+				w.createExplosion(loc, 2);
+			}
 		}
-			if (e instanceof org.bukkit.entity.Snowball){
-				if(smoke){
-					w.createExplosion(loc, -10);
-					w.createExplosion(loc, -2);
+		else if (e instanceof org.bukkit.entity.Snowball){
+			if(smoke){
+				w.createExplosion(loc, -10);
+				w.createExplosion(loc, -2);
+				for (int i = 0; i<5;i++){
 					w.playEffect(loc, Effect.SMOKE, 1);
-					w.playEffect(loc, Effect.SMOKE, 1);
-					w.playEffect(loc, Effect.SMOKE, 1);
-					w.playEffect(loc, Effect.SMOKE, 1);
-					w.playEffect(loc, Effect.SMOKE, 1);
+				}
 			}
 		}
 	}
