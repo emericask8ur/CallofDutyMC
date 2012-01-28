@@ -70,7 +70,7 @@ public class Main extends JavaPlugin{
 		ChatColor a = ChatColor.AQUA;
 		Block target = p.getTargetBlock(null, 200);
 		Location tloc= target.getLocation();
-		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu:")){
+		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu")){
 			sender.sendMessage(g + "/Airstrike - Must have stick in hand*");
 			sender.sendMessage(g + "/Auto - Automatic guns");
 			sender.sendMessage(g + "/Smoke - Smoke Grenades *Snow Ball");
