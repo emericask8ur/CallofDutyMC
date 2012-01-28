@@ -84,21 +84,21 @@ public class Main extends JavaPlugin{
 		}
 		else if (cmdLabel.equalsIgnoreCase("airstrike") && p.hasPermission("cod.air")){
 			if(p.getItemInHand().getType()==Material.STICK){
-			 target.getWorld().createExplosion(tloc, 3);
-			target.getWorld().strikeLightning(tloc);
+				target.getWorld().createExplosion(tloc, 3);
+				target.getWorld().strikeLightning(tloc);
 				return true;		
-				}
 			}
+		}
 		else if (cmdLabel.equalsIgnoreCase("auto") && p.hasPermission("cod.auto")){
 			if(p.getItemInHand().getType()==Material.STICK){
-					PL.auto=!PL.auto;
-					if(PL.auto){		
-						sender.sendMessage("Auto on!");
-					} else {
-						sender.sendMessage("Off!");
-					}
+				PL.auto=!PL.auto;
+				if(PL.auto){		
+					sender.sendMessage("Auto on!");
+				} else {
+					sender.sendMessage("Auto off!");
+				}
 				return true;
-		}
+			}
 		}
 		else if (cmdLabel.equalsIgnoreCase("smoke") && p.hasPermission("cod.smoke")){
 			EL.smoke=!EL.smoke;
@@ -119,7 +119,7 @@ public class Main extends JavaPlugin{
 				sender.sendMessage("Disabled!");
 			}
 			return true;
-			}
+		}
 		else if (cmdLabel.equalsIgnoreCase("join")){
 			PL.join=!PL.join;
 			if(PL.join){
@@ -143,64 +143,49 @@ public class Main extends JavaPlugin{
 		}
 		else if (cmdLabel.equalsIgnoreCase("body") && args.length==1){
 			if(args[0].equalsIgnoreCase("count")){
-				 PlayerInfo.get((Player)sender).killedEntityCount += 1;
-				 sender.sendMessage("You killed: " + PlayerInfo.get((Player) sender).killedEntityCount);	
+				int killedEntityCount = ++PlayerInfo.get((Player)sender).killedEntityCount;
+				sender.sendMessage("You killed: " + killedEntityCount);	
 			}
-				 if(PlayerInfo.get((Player) sender).killedEntityCount==5){
-					 sender.sendMessage("Test <><><><>>");
-					 return true;
+			if(PlayerInfo.get((Player) sender).killedEntityCount==5){
+				sender.sendMessage("Test <><><><>>");
 			}
-			   return true;
+			return true;
 		}
 		else if (cmdLabel.equalsIgnoreCase("level") && args.length==1 && p.hasPermission("cod.level")){
 			if(args[0].equalsIgnoreCase("1")){
 				target.getWorld().spawnCreature(tloc, CreatureType.PIG_ZOMBIE);
-				sender.sendMessage(a + "Level One! Go! /Level 2 For Next Round");
+			}
+			else if(args[0].equalsIgnoreCase("2")){
+				target.getWorld().spawnCreature(tloc, CreatureType.SKELETON);
+			}
+			else if (args[0].equalsIgnoreCase("3")){
+				target.getWorld().spawnCreature(tloc, CreatureType.WOLF);
+			}
+			else if (args[0].equalsIgnoreCase("4")){
+				target.getWorld().spawnCreature(tloc, CreatureType.SPIDER);
+			}
+			else if (args[0].equalsIgnoreCase("5")){
+				target.getWorld().spawnCreature(tloc, CreatureType.ZOMBIE);
+			}
+			else if (args[0].equalsIgnoreCase("6")){
+				target.getWorld().spawnCreature(tloc, CreatureType.ENDERMAN);
+			}
+			else if (args[0].equalsIgnoreCase("7")){
+				target.getWorld().spawnCreature(tloc, CreatureType.CREEPER);
+			}
+			else if (args[0].equalsIgnoreCase("8")){
+				target.getWorld().spawnCreature(tloc, CreatureType.GIANT);
+			}
+			else if (args[0].equalsIgnoreCase("9")){
+				target.getWorld().spawnCreature(tloc, CreatureType.GHAST);
+			}
+			else if (args[0].equalsIgnoreCase("10")){
+				sender.sendMessage(a + "Congrats! You have won! Return to /cod for some more fun!");
 				return true;
 			}
-		else if(args[0].equalsIgnoreCase("2")){
-			target.getWorld().spawnCreature(tloc, CreatureType.SKELETON);
-			sender.sendMessage(a + "Level One! Go! /Level 3 For Next Round");
+			if(Integer.parseInt(args[0]) < 10){
+				sender.sendMessage(a + "Level One! Go! /Level "+args[0]+" For Next Round");
 				return true;
-			}
-		else if (args[0].equalsIgnoreCase("3")){
-			target.getWorld().spawnCreature(tloc, CreatureType.WOLF);
-			sender.sendMessage(a + "Level One! Go! /Level 4 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("4")){
-			target.getWorld().spawnCreature(tloc, CreatureType.SPIDER);
-			sender.sendMessage(a + "Level One! Go! /Level 5 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("5")){
-			target.getWorld().spawnCreature(tloc, CreatureType.ZOMBIE);
-			sender.sendMessage(a + "Level One! Go! /Level 6 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("6")){
-			target.getWorld().spawnCreature(tloc, CreatureType.ENDERMAN);
-			sender.sendMessage(a + "Level One! Go! /Level 7 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("7")){
-			target.getWorld().spawnCreature(tloc, CreatureType.CREEPER);
-			sender.sendMessage(a + "Level One! Go! /Level 8 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("8")){
-			target.getWorld().spawnCreature(tloc, CreatureType.GIANT);
-			sender.sendMessage(a + "Level One! Go! /Level 9 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("9")){
-			target.getWorld().spawnCreature(tloc, CreatureType.GHAST);
-			sender.sendMessage(a + "Level One! Go! /Level 10 For Next Round");
-			return true;
-		}
-		else if (args[0].equalsIgnoreCase("10")){
-			sender.sendMessage(a + "Congrats! You have won! Return to /cod for some more fun!");
-			return true;
 			}
 		}
 		else if (cmdLabel.equalsIgnoreCase("start") ){
@@ -223,7 +208,7 @@ public class Main extends JavaPlugin{
 			}
 			return true;
 		}
-		return true;
+		return false;
 	}
 }
 
