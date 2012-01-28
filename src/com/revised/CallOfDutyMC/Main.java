@@ -4,6 +4,8 @@ package com.revised.CallOfDutyMC;
 
 
 
+import java.io.File;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -22,6 +24,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin{
 	private final EL EntityListener = new EL();
 	private final PL PlayerListener = new PL();
+	
 	
 	/*
 	 * @return Plugin Version
@@ -57,6 +60,7 @@ public class Main extends JavaPlugin{
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvent(Event.Type.PROJECTILE_HIT, EntityListener, Priority.High, this);
 		pm.registerEvent(Event.Type.PLAYER_INTERACT, PlayerListener, Priority.Highest, this);
+		pm.registerEvent(Event.Type.ENTITY_DEATH, EntityListener, Priority.Normal, this);
 		System.out.println(getInfo());
 		
 	}
