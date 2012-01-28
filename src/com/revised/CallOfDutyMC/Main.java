@@ -80,7 +80,13 @@ public class Main extends JavaPlugin{
 			sender.sendMessage(g + "/Start - Turns it on and off");
 			sender.sendMessage(g + "/Level <1-10>");
 			sender.sendMessage(g + "/Minigun - Fast Shooting Minigun *Right Click");
+			sender.sendMessage(g + "/Remove Team - Removes from Current Team");
 			return true;
+		}
+		else if (cmdLabel.equalsIgnoreCase("remove") && args.length==1 && p.hasPermission("cod.team")){
+			if(args[0].equalsIgnoreCase("team")){
+				p.setDisplayName(playername);
+			}
 		}
 		else if (cmdLabel.equalsIgnoreCase("airstrike") && p.hasPermission("cod.air")){
 			if(p.getItemInHand().getType()==Material.STICK){
