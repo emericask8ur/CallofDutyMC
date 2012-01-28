@@ -34,4 +34,5 @@ public class Classes {
 		inv.addItem(b);
 		inv.addItem(bb);
 	}
+	
 }
