@@ -55,7 +55,6 @@ public class PL extends PlayerListener{
 							p.shootArrow();
 							w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
 							p.getInventory().removeItem(i);
-							w.dropItem(p.getLocation(),i);
 					}
 					}
 					
