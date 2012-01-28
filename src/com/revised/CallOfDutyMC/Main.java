@@ -146,9 +146,6 @@ public class Main extends JavaPlugin{
 				int killedEntityCount = ++PlayerInfo.get((Player)sender).killedEntityCount;
 				sender.sendMessage("You killed: " + killedEntityCount);	
 			}
-			if(PlayerInfo.get((Player) sender).killedEntityCount==5){
-				sender.sendMessage("Test <><><><>>");
-			}
 			return true;
 		}
 		else if (cmdLabel.equalsIgnoreCase("level") && args.length==1 && p.hasPermission("cod.level")){
