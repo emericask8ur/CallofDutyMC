@@ -22,10 +22,22 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin{
 	private final EL EntityListener = new EL();
 	private final PL PlayerListener = new PL();
+	
+	public String getVersion(){
+		
+		return this.getDescription().getVersion();
+	}
+	
+	public String getName(){
+		return "[" + this.getDescription().getName() + "]";
+	}
+	public String getInfo(){
+		return getName() + " " + getVersion();
+	}
 
 	@Override
 	public void onDisable() {
-		System.out.println("[Call Of Duty MC] Disabled!");
+		System.out.println(getInfo());
 		
 	}
 
@@ -34,7 +46,7 @@ public class Main extends JavaPlugin{
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvent(Event.Type.PROJECTILE_HIT, EntityListener, Priority.High, this);
 		pm.registerEvent(Event.Type.PLAYER_INTERACT, PlayerListener, Priority.Highest, this);
-		System.out.println("[Call Of Duty MC] Enabled!");
+		System.out.println(getInfo());
 		
 	}
 	@Override
