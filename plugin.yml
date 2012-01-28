@@ -1,0 +1,65 @@
+name: CallOfDutyMC
+version: 0.2
+main: com.revised.CallOfDutyMC.Main
+commands:
+  Cod:
+   description: Uses
+   usage: /Cod
+  Airstrike:
+   description: Uses
+   usage: /Airstrike
+  Auto:
+   description: Uses
+   usage: /Auto
+  Smoke:
+   description: Uses
+   usage: /Smoke
+  Grenade:
+   description: Uses
+   usage: /Grenade
+  Join:
+   description: Uses
+   usage: /Join
+  Body:
+   description: Uses
+   usage: /Body
+  Team:
+   description: Uses
+   usage: /Team
+  Level:
+   description: Uses
+   usage: /Level
+  Start:
+   description: Uses
+   usage: /Start
+  Minigun:
+   description: Uses
+   usage: /Minigun
+  Strike:
+   description: Uses
+   usage: /Minigun
+  Remove:
+   description: Uses
+   usage: /Remove Team
+permissions:
+  cod.air:
+   description: Uses this plugin
+   default: op
+  cod.auto:
+   description: Uses this plugin
+   default: op
+  cod.smoke:
+   description: Uses this plugin
+   default: op
+  cod.grenade:
+   description: Uses this plugin
+   default: op
+  cod.team:
+   description: Uses this plugin
+   default: op
+  cod.level:
+   description: Uses this plugin
+   default: op
+  cod.menu:
+   description: Uses this plugin
+   default: op
