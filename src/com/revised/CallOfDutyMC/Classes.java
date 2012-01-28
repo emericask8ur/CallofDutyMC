@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
 public class Classes {
+	
 	public static void classA(Player player){
 		PlayerInventory inv = player.getInventory();
 		ItemStack i = new ItemStack(Material.BOW,1);
@@ -17,6 +18,7 @@ public class Classes {
 		inv.addItem(iii);
 		inv.addItem(iiii);
 	}
+	
 	public static void classB(Player player){
 		PlayerInventory inv = player.getInventory();
 		ItemStack b = new ItemStack(Material.DIAMOND_SWORD,1);
@@ -32,5 +34,4 @@ public class Classes {
 		inv.addItem(b);
 		inv.addItem(bb);
 	}
-
 }
