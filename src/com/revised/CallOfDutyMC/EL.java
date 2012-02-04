@@ -7,15 +7,18 @@ import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.event.entity.EntityListener;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import WriterClass.Writer;
 
-public class EL extends EntityListener{
+public class EL implements Listener{
 	public static boolean gran = false;
 	public static boolean smoke = false;
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onProjectileHit(ProjectileHitEvent event){
 		Entity e = event.getEntity();
 		World w = e.getWorld();
@@ -35,6 +38,7 @@ public class EL extends EntityListener{
 			}
 		}
 	}
+	@EventHandler(priority = EventPriority.NORMAL)
 	public void onEntityDeath(EntityDeathEvent event){
 		Entity e = event.getEntity();
 		DamageCause cause = e.getLastDamageCause().getCause();

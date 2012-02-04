@@ -8,16 +8,12 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.CreatureType;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-import org.bukkit.event.Event.Priority;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Main extends JavaPlugin{
-	private final EL EntityListener = new EL();
-	private final PL PlayerListener = new PL();
 	
 	/*
 	 * @return Plugin Version
@@ -51,9 +47,8 @@ public class Main extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvent(Event.Type.PROJECTILE_HIT, EntityListener, Priority.High, this);
-		pm.registerEvent(Event.Type.PLAYER_INTERACT, PlayerListener, Priority.Highest, this);
-		pm.registerEvent(Event.Type.ENTITY_DEATH, EntityListener, Priority.Normal, this);
+		pm.registerEvents(new PL(), this);
+		pm.registerEvents(new EL(), this);
 		System.out.println(getInfo());
 		
 	}
@@ -68,6 +63,7 @@ public class Main extends JavaPlugin{
 		Block target = p.getTargetBlock(null, 200);
 		Location tloc= target.getLocation();
 		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu")){
+			sender.sendMessage(ChatColor.RED + getVersion());
 			sender.sendMessage(g + "/Airstrike - Must have stick in hand*");
 			sender.sendMessage(g + "/Auto - Automatic guns");
 			sender.sendMessage(g + "/Smoke - Smoke Grenades *Snow Ball");
