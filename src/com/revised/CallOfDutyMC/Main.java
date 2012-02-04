@@ -184,7 +184,7 @@ public class Main extends JavaPlugin{
 				return true;
 			}
 		}
-		else if (cmdLabel.equalsIgnoreCase("start") ){
+		else if (cmdLabel.equalsIgnoreCase("start") && p.hasPermission("cod.start")){
 			PL.on=!PL.on;
 			if(PL.on){
 				sender.sendMessage(a + "Call of Duty MC On!");
