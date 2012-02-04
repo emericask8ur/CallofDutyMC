@@ -207,27 +207,7 @@ public class Main extends JavaPlugin{
 				sender.sendMessage("Miniguns off!");
 			}
 			return true;
-		}
-		else if (cmdLabel.equalsIgnoreCase("class") && args.length==1){
-			if(args[0].equalsIgnoreCase("a")){
-				if(!p.getInventory().contains(Material.ARROW) && !p.getInventory().contains(Material.BOW)){
-					Classes.classA(p);
-					return true;
-				} else {
-					sender.sendMessage(ChatColor.RED + "You already have this class!");
-				}
-				return true;
 			}
-			else if (args[0].equalsIgnoreCase("b")){
-				if(!p.getInventory().contains(Material.DIAMOND_SWORD) && !p.getInventory().contains(Material.GOLDEN_APPLE)){
-					Classes.classB(p);
-					return true;
-				} else {
-					sender.sendMessage(ChatColor.RED + "You already have this class!");
-				}
-				return true;
-			}
-		}
 		return false;
 	}
 }
