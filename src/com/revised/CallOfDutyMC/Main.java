@@ -180,7 +180,7 @@ public class Main extends JavaPlugin{
 				return true;
 			}
 			if(Integer.parseInt(args[0]) < 10){
-				sender.sendMessage(a + "Level One! Go! /Level "+args[0]+" For Next Round");
+				sender.sendMessage(a + "Level One! Go! /Level "+ args[0]+ " For Next Round");
 				return true;
 			}
 		}
@@ -204,6 +204,9 @@ public class Main extends JavaPlugin{
 			}
 			return true;
 			}
+		/*
+		 * Start Classes
+		 */
 		return false;
 	}
 }

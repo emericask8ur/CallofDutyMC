@@ -1,0 +1,3 @@
+While adding features; Every 5 Functions you create You push up the Version.
+Example:
+version: 3.0.1 <--- Always Change the Last Number
