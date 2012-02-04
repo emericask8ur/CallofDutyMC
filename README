@@ -1,0 +1,4 @@
+Rules of Pull Request:
+- No Trailing Whitespaces
+- Add // Notes about Function/Add
+- Always test before Creating a Pull Request
