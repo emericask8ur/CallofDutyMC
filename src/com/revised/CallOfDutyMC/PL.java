@@ -30,10 +30,9 @@ public class PL implements Listener {
 					w.createExplosion(p.getLocation(), -0);
 				}
 				if (auto) {
+					for(int a = 0; a < 4; a++){
 					p.shootArrow();
-					p.shootArrow();
-					p.shootArrow();
-					p.shootArrow();
+					}
 					w.createExplosion(p.getLocation(), -2);
 				}
 			}
