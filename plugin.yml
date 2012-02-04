@@ -1,5 +1,5 @@
 name: CallOfDutyMC
-version: 0.2
+version: 3.0.1
 main: com.revised.CallOfDutyMC.Main
 commands:
   Cod:
@@ -61,5 +61,8 @@ permissions:
    description: Uses this plugin
    default: op
   cod.menu:
+   description: Uses this plugin
+   default: op
+  cod.start:
    description: Uses this plugin
    default: op
