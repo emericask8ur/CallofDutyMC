@@ -5,6 +5,9 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 
 public class EX {
+	/*
+	 * Implement  Buying of Classes
+	 */
 	
 	public static void buyClassA(Player player){
 		player.setExp(-10);

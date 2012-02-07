@@ -44,6 +44,9 @@ commands:
   Nuke:
    description: Uses
    usage: /Nuke
+  Buy:
+   description: Uses
+   usage: /Buy [A/B]
 permissions:
   cod.air:
    description: Uses this plugin
@@ -70,5 +73,8 @@ permissions:
    description: Uses this plugin
    default: op
   cod.nuke:
+   description: Uses this plugin
+   default: op
+  cod.buy:
    description: Uses this plugin
    default: op

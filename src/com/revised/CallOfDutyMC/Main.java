@@ -64,6 +64,7 @@ public class Main extends JavaPlugin{
 		Block target = p.getTargetBlock(null, 200);
 		Location tloc= target.getLocation();
 		World world = p.getWorld();
+		ChatColor red = ChatColor.RED;
 		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu")){
 			sender.sendMessage(ChatColor.RED + getVersion());
 			sender.sendMessage(g + "/Airstrike - Must have stick in hand*");
@@ -76,11 +77,34 @@ public class Main extends JavaPlugin{
 			sender.sendMessage(g + "/Level <1-10>");
 			sender.sendMessage(g + "/Minigun - Fast Shooting Minigun *Right Click");
 			sender.sendMessage(g + "/Remove Team - Removes from Current Team");
+			sender.sendMessage(g + "/Buy <A/B> - Buy Weapon Classes with Exp");
 			return true;
 		}
 		/*
 		 * Implement New Commands for New Version
 		 */
+		else if(cmdLabel.equalsIgnoreCase("buy") && args.length==1 && p.hasPermission("cod.buy")){
+			if(args[0].equalsIgnoreCase("a")){
+				if(p.getExp() > 10){
+					EX.buyClassA(p);
+					Classes.classA(p);
+					return true;
+				} else {
+					sender.sendMessage(red + "Im sorry you need +10 Exp!");
+				}
+				return true;
+			}
+			else if(args[0].equalsIgnoreCase("b")){
+				if(p.getExp() > 20){
+					EX.buyClassB(p);
+					Classes.classB(p);
+					return true;
+				} else {
+					sender.sendMessage(red + "Im sorry you need +20 Exp!");
+				}
+			}
+			return true;
+		}
 		else if (cmdLabel.equalsIgnoreCase("nuke") && p.hasPermission("cod.nuke")){
 			if(args.length==0){
 				sender.sendMessage(ChatColor.RED + "/Nuke could lag out your server, please type ' /Nuke Yes ' to confirm");
