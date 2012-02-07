@@ -32,6 +32,7 @@ public class PL implements Listener {
 				if (auto) {
 					for(int a = 0; a < 4; a++){
 					p.shootArrow();
+					p.getInventory().remove(new ItemStack(Material.ARROW,1));
 					}
 					w.createExplosion(p.getLocation(), -2);
 				}
@@ -42,9 +43,9 @@ public class PL implements Listener {
 				if (p.getItemInHand().getType() == Material.STICK) {
 					for (int b = 0; b < 9; b++) {
 						p.shootArrow();
+						p.getInventory().remove(new ItemStack(Material.ARROW,1));
 					}
 					w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
-					p.getInventory().removeItem(i);
 				}
 			}
 		}

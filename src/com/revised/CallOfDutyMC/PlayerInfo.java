@@ -37,8 +37,8 @@ public class PlayerInfo {
 	    //Set the default values here
 	    this.isPredator = false;
 	    this.killedEntityCount = 0;
+	    
 	  }
-	  
 	  public boolean isPredator;
 	  public int killedEntityCount;
 	  
