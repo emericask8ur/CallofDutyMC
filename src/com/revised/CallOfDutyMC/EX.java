@@ -10,13 +10,20 @@ public class EX {
 	 */
 	
 	public static void buyClassA(Player player){
-		player.setExp(-10);
+		float sub = player.getExp() - 10;
+		player.setExp(sub);
 		
 	}
 	
 	public static void buyClassB(Player player){
-		player.setExp(-20);
+		float sub = player.getExp() - 20;
+		player.setExp(sub);
 	
+	}
+	
+	public static void buyClassC(Player player){
+		float sub = player.getExp() - 15;
+		player.setExp(sub);
 	}
 	
 	public static void nuke(World world, Location location){
