@@ -25,14 +25,17 @@ public class PL implements Listener {
 		if (on) {
 			if (event.getAction() == Action.LEFT_CLICK_AIR) {
 				if (p.getItemInHand().getType() == Material.STICK) {
-					p.shootArrow();
-					p.getInventory().removeItem(i);
-					w.createExplosion(p.getLocation(), -0);
+					for (int x = 0; x < 1; x++) {
+						p.shootArrow();
+						p.getInventory().removeItem(i);
+						w.createExplosion(p.getLocation(), -0);
+					}
 				}
 				if (auto) {
-					for(int a = 0; a < 4; a++){
-					p.shootArrow();
-					p.getInventory().remove(new ItemStack(Material.ARROW,1));
+					for (int a = 0; a < 4; a++) {
+						p.shootArrow();
+						p.getInventory().remove(
+								new ItemStack(Material.ARROW, 1));
 					}
 					w.createExplosion(p.getLocation(), -2);
 				}
@@ -43,7 +46,8 @@ public class PL implements Listener {
 				if (p.getItemInHand().getType() == Material.STICK) {
 					for (int b = 0; b < 9; b++) {
 						p.shootArrow();
-						p.getInventory().remove(new ItemStack(Material.ARROW,1));
+						p.getInventory().remove(
+								new ItemStack(Material.ARROW, 1));
 					}
 					w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
 				}
