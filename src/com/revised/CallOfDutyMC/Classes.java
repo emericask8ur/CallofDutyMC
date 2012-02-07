@@ -35,4 +35,16 @@ public class Classes {
 		inv.addItem(b);
 		inv.addItem(bb);
 	}
+	
+	public static void classC(Player player){
+		PlayerInventory inv = player.getInventory();
+		ItemStack a = new ItemStack(Material.GOLD_SWORD,1);
+		ItemStack aa = new ItemStack(Material.ARROW,64);
+		ItemStack aaa = new ItemStack(Material.BOW,1);
+		ItemStack i = new ItemStack(Material.GOLD_HELMET,1);
+		inv.addItem(a);
+		inv.addItem(aa);
+		inv.addItem(aaa);
+		inv.addItem(i);
+	}
 }
