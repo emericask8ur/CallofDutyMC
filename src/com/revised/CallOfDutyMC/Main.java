@@ -84,24 +84,38 @@ public class Main extends JavaPlugin{
 		 * Implement New Commands for New Version
 		 */
 		else if(cmdLabel.equalsIgnoreCase("buy") && args.length==1 && p.hasPermission("cod.buy")){
+			//Class A
 			if(args[0].equalsIgnoreCase("a")){
-				if(p.getExp() > 10){
+				if(p.getExp() >= 10){
 					EX.buyClassA(p);
 					Classes.classA(p);
+					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 					return true;
 				} else {
 					sender.sendMessage(red + "Im sorry you need +10 Exp!");
 				}
 				return true;
 			}
+			//Class B
 			else if(args[0].equalsIgnoreCase("b")){
-				if(p.getExp() > 20){
+				if(p.getExp() >= 20){
 					EX.buyClassB(p);
 					Classes.classB(p);
+					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 					return true;
 				} else {
 					sender.sendMessage(red + "Im sorry you need +20 Exp!");
 				}
+			}
+			//Class C 
+			else if (args[0].equalsIgnoreCase("c")){
+				if(p.getExp() >= 15)
+					EX.buyClassC(p);
+					Classes.classC(p);
+					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
+				return true;
+			} else {
+				sender.sendMessage(red + "Im sorry you need +15 Exp!");
 			}
 			return true;
 		}
