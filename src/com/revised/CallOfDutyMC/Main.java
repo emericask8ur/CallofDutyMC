@@ -3,6 +3,7 @@ package com.revised.CallOfDutyMC;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -62,6 +63,7 @@ public class Main extends JavaPlugin{
 		ChatColor a = ChatColor.AQUA;
 		Block target = p.getTargetBlock(null, 200);
 		Location tloc= target.getLocation();
+		World world = p.getWorld();
 		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu")){
 			sender.sendMessage(ChatColor.RED + getVersion());
 			sender.sendMessage(g + "/Airstrike - Must have stick in hand*");
@@ -74,6 +76,22 @@ public class Main extends JavaPlugin{
 			sender.sendMessage(g + "/Level <1-10>");
 			sender.sendMessage(g + "/Minigun - Fast Shooting Minigun *Right Click");
 			sender.sendMessage(g + "/Remove Team - Removes from Current Team");
+			return true;
+		}
+		/*
+		 * Implement New Commands for New Version
+		 */
+		else if (cmdLabel.equalsIgnoreCase("nuke") && p.hasPermission("cod.nuke")){
+			if(args.length==0){
+				sender.sendMessage(ChatColor.RED + "/Nuke could lag out your server, please type ' /Nuke Yes ' to confirm");
+				return true;
+			}
+			else if (args.length==1){
+				if(args[0].equalsIgnoreCase("yes")){
+					EX.nuke(world, tloc);
+					return true;
+				}
+			}
 			return true;
 		}
 		else if (cmdLabel.equalsIgnoreCase("remove") && args.length==1 && p.hasPermission("cod.team")){
