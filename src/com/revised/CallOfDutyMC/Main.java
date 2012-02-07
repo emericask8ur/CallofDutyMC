@@ -207,7 +207,7 @@ public class Main extends JavaPlugin{
 		/*
 		 * Start Classes
 		 */
-		return false;
+		return true;
 	}
 }
 
