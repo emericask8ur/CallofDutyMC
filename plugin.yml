@@ -1,5 +1,5 @@
 name: CallOfDutyMC
-version: 3.0.1
+version: 3.0.2
 main: com.revised.CallOfDutyMC.Main
 commands:
   Cod:
@@ -41,6 +41,9 @@ commands:
   Remove:
    description: Uses
    usage: /Remove Team
+  Nuke:
+   description: Uses
+   usage: /Nuke
 permissions:
   cod.air:
    description: Uses this plugin
@@ -64,5 +67,8 @@ permissions:
    description: Uses this plugin
    default: op
   cod.start:
+   description: Uses this plugin
+   default: op
+  cod.nuke:
    description: Uses this plugin
    default: op
