@@ -77,7 +77,7 @@ public class Main extends JavaPlugin{
 			sender.sendMessage(g + "/Level <1-10>");
 			sender.sendMessage(g + "/Minigun - Fast Shooting Minigun *Right Click");
 			sender.sendMessage(g + "/Remove Team - Removes from Current Team");
-			sender.sendMessage(g + "/Buy <A/B> - Buy Weapon Classes with Exp");
+			sender.sendMessage(g + "/Buy <A/B/C> - Buy Weapon Classes with Exp");
 			return true;
 		}
 		/*
@@ -119,7 +119,7 @@ public class Main extends JavaPlugin{
 			}
 			return true;
 		}
-		else if (cmdLabel.equalsIgnoreCase("nuke") && p.hasPermission("cod.nuke")){
+		else if (cmdLabel.equalsIgnoreCase("nuke") && args.length > 0 &&  p.hasPermission("cod.nuke")){
 			if(args.length==0){
 				sender.sendMessage(ChatColor.RED + "/Nuke could lag out your server, please type ' /Nuke Yes ' to confirm");
 				return true;
