@@ -7,7 +7,6 @@ import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -44,7 +43,6 @@ public class EL implements Listener{
 		Entity e = event.getEntity();
 		DamageCause cause = e.getLastDamageCause().getCause();
 		event.getEntity().getLastDamageCause().getEntity();
-		String out = "";
 		File file = new File("death.text");
 		if (file.exists()) {
 			System.out.println("It already Exists!");
