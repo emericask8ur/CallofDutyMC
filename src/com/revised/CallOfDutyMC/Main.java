@@ -15,7 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Main extends JavaPlugin{
-
 	/*
 	 * @return Plugin Version
 	 */
@@ -56,6 +55,9 @@ public class Main extends JavaPlugin{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String cmdLabel, String[] args){
 		Player p = (Player)sender;
+		float classa = p.getExp() - 10;
+		float classb = p.getExp() - 20;
+		float classc = p.getExp() - 15;
 		ChatColor g = ChatColor.GREEN;
 		ItemStack i = new ItemStack(Material.SNOW_BALL,1);
 		ItemStack ii = new ItemStack(Material.EGG,1);
@@ -87,7 +89,7 @@ public class Main extends JavaPlugin{
 			//Class A
 			if(args[0].equalsIgnoreCase("a")){
 				if(p.getExp() >= 10){
-					EX.buyClassA(p);
+					p.setExp(classa);
 					Classes.classA(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 					return true;
@@ -99,7 +101,7 @@ public class Main extends JavaPlugin{
 			//Class B
 			else if(args[0].equalsIgnoreCase("b")){
 				if(p.getExp() >= 20){
-					EX.buyClassB(p);
+					p.setExp(classb);
 					Classes.classB(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 					return true;
@@ -111,7 +113,7 @@ public class Main extends JavaPlugin{
 			//Class C 
 			else if (args[0].equalsIgnoreCase("c")){
 				if(p.getExp() >= 15)
-					EX.buyClassC(p);
+					p.setExp(classc);
 					Classes.classC(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 				return true;
