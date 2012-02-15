@@ -89,7 +89,7 @@ public class Main extends JavaPlugin{
 			//Class A
 			if(args[0].equalsIgnoreCase("a")){
 				if(p.getTotalExperience() >= 10){
-					p.setExp(classa);
+					p.setTotalExperience(classa);
 					Classes.classA(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 					return true;
@@ -101,7 +101,7 @@ public class Main extends JavaPlugin{
 			//Class B
 			else if(args[0].equalsIgnoreCase("b")){
 				if(p.getTotalExperience() >= 20){
-					p.setExp(classb);
+					p.setTotalExperience(classb);
 					Classes.classB(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 					return true;
@@ -113,7 +113,7 @@ public class Main extends JavaPlugin{
 			//Class C 
 			else if (args[0].equalsIgnoreCase("c")){
 				if(p.getTotalExperience() >= 15)
-					p.setExp(classc);
+					p.setTotalExperience(classc);
 					Classes.classC(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
 				return true;
