@@ -106,6 +106,7 @@ public class Main extends JavaPlugin{
 				} else {
 					sender.sendMessage(red + "Im sorry you need +20 Exp!");
 				}
+				return true;
 			}
 			//Class C 
 			else if (args[0].equalsIgnoreCase("c")){

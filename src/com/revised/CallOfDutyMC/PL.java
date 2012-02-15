@@ -3,11 +3,13 @@ package com.revised.CallOfDutyMC;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -52,4 +54,15 @@ public class PL implements Listener {
 			}
 		}
 	}
+	@EventHandler(priority = EventPriority.NORMAL)
+	public void onEntityDeath(EntityDeathEvent event){
+		Entity ent = event.getEntity();
+		if(!(ent instanceof Player)) return;
+		if(ent instanceof Player){
+			EX.KILL(ent); 
+		}
+		
+		
+	}
+	
 }
