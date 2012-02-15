@@ -112,13 +112,15 @@ public class Main extends JavaPlugin{
 			}
 			//Class C 
 			else if (args[0].equalsIgnoreCase("c")){
-				if(p.getTotalExperience() >= 15)
+				if(p.getTotalExperience() >= 15){
 					p.setTotalExperience(classc);
 					Classes.classC(p);
 					sender.sendMessage(g + "You have selected Class " + args[0] + "!");
-				return true;
-			} else {
+					return true;
+				} else {
 				sender.sendMessage(red + "Im sorry you need +15 Exp!");
+				}
+				return true;
 			}
 			return true;
 		}
