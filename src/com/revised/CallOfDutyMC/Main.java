@@ -1,5 +1,7 @@
 package com.revised.CallOfDutyMC;
 
+import java.io.File;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,7 +25,6 @@ public class Main extends JavaPlugin{
 		return this.getDescription().getVersion();
 	}
 	
-
 	/**
 	 * 	
 	 * @return Plugin Name
@@ -52,6 +53,12 @@ public class Main extends JavaPlugin{
 		pm.registerEvents(new PL(), this);
 		pm.registerEvents(new EL(), this);
 		System.out.println(getInfo());
+		File file = new File("death.text");
+		if(file.exists()){
+			System.out.println("File already exists!");
+		} else {
+			
+		}
 		
 	}
 	@Override
@@ -70,7 +77,7 @@ public class Main extends JavaPlugin{
 		World world = p.getWorld();
 		ChatColor red = ChatColor.RED;
 		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu")){
-			sender.sendMessage(ChatColor.RED + getVersion());
+			sender.sendMessage(ChatColor.RED +   "CallofDutyMC Version: " + getVersion());
 			sender.sendMessage(g + "/Airstrike - Must have stick in hand*");
 			sender.sendMessage(g + "/Auto - Automatic guns");
 			sender.sendMessage(g + "/Smoke - Smoke Grenades *Snow Ball");
@@ -251,7 +258,8 @@ public class Main extends JavaPlugin{
 			PL.on=!PL.on;
 			if(PL.on){
 				sender.sendMessage(a + "Call of Duty MC On!");
-				p.getServer().broadcastMessage(playername + " has turned Call of Duty On!");		
+				p.getServer().broadcastMessage(playername + " has turned Call of Duty On!");	
+				p.getInventory().addItem(new ItemStack(Material.ARROW,64));
 			} else {
 				sender.sendMessage(a + "Call of Duty MC Off!");
 				p.getServer().broadcastMessage(playername + " has turned Call of Duty Off!");	

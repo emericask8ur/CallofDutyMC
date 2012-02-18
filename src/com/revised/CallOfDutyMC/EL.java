@@ -44,9 +44,6 @@ public class EL implements Listener{
 		DamageCause cause = e.getLastDamageCause().getCause();
 		event.getEntity().getLastDamageCause().getEntity();
 		File file = new File("death.text");
-		if (file.exists()) {
-			System.out.println("It already Exists!");
-		} else {
 			try {
 				Writer.Write(file, "Events: " + cause); 
 			} catch (IOException ii) {
@@ -54,4 +51,3 @@ public class EL implements Listener{
 			}
 		}
 	}
-}

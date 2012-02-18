@@ -26,7 +26,7 @@ public class PL implements Listener {
 		ItemStack i = new ItemStack(Material.ARROW, 1);
 		if (on) {
 			if (event.getAction() == Action.LEFT_CLICK_AIR) {
-				if (p.getItemInHand().getType() == Material.STICK) {
+				if (p.getItemInHand().getType() == Material.STICK && p.getInventory().contains(Material.ARROW)) {
 					for (int x = 0; x < 1; x++) {
 						p.shootArrow();
 						p.getInventory().removeItem(i);
@@ -39,17 +39,19 @@ public class PL implements Listener {
 						p.getInventory().remove(new ItemStack(Material.ARROW, 1));
 					}
 					w.createExplosion(p.getLocation(), -2);
+					p.getInventory().remove(new ItemStack(Material.ARROW, 1));
 				}
 			}
 		}
 		if (mini) {
 			if (event.getAction() == Action.RIGHT_CLICK_AIR) {
-				if (p.getItemInHand().getType() == Material.STICK) {
+				if (p.getItemInHand().getType() == Material.STICK && p.getInventory().contains(Material.ARROW)) {
 					for (int b = 0; b < 9; b++) {
 						p.shootArrow();
 						p.getInventory().remove(new ItemStack(Material.ARROW, 1));
 					}
 					w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
+					p.getInventory().remove(new ItemStack(Material.ARROW, 3));
 				}
 			}
 		}
@@ -57,12 +59,9 @@ public class PL implements Listener {
 	@EventHandler(priority = EventPriority.NORMAL)
 	public void onEntityDeath(EntityDeathEvent event){
 		Entity ent = event.getEntity();
-		if(!(ent instanceof Player)) return;
+		World wa = ent.getWorld();
 		if(ent instanceof Player){
-			EX.KILL(ent); 
+			wa.dropItemNaturally(ent.getLocation(), new ItemStack(Material.ARROW,1)); 
 		}
-		
-		
 	}
-	
 }
