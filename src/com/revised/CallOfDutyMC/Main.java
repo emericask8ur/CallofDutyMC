@@ -15,25 +15,27 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Main extends JavaPlugin{
-	/*
-	 * @return Plugin Version
+	/**
+	 * 
+	 * @return YML Version
 	 */
 	public String getVersion(){
 		return this.getDescription().getVersion();
 	}
 	
-	/*
+
+	/**
+	 * 	
 	 * @return Plugin Name
 	 */
-	
 	public String getName(){
 		return "[" + this.getDescription().getName() + "]";
 	}
 	
-	/*
-	 * @return Plugin Info
+	/**
+	 * 
+	 * @return Implement both Methods together
 	 */
-	
 	public String getInfo(){
 		return getName() + " " + getVersion();
 	}
