@@ -9,6 +9,7 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.PluginManager;
@@ -51,7 +52,7 @@ public class Main extends JavaPlugin {
 		ChatColor red = ChatColor.RED;
 		if (cmdLabel.equalsIgnoreCase("cod") && p.hasPermission("cod.menu")) {
 			sender.sendMessage(ChatColor.RED + "CallofDutyMC Version: "
-					+ getDescription().getVersion();
+					+ getDescription().getVersion());
 			sender.sendMessage(g + "/Airstrike - Must have stick in hand*");
 			sender.sendMessage(g + "/Auto - Automatic guns");
 			sender.sendMessage(g + "/Smoke - Smoke Grenades *Snow Ball");
@@ -197,23 +198,23 @@ public class Main extends JavaPlugin {
 		} else if (cmdLabel.equalsIgnoreCase("level") && args.length == 1
 				&& p.hasPermission("cod.level")) {
 			if (args[0].equalsIgnoreCase("1")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.PIG_ZOMBIE);
+				target.getWorld().spawnCreature(tloc, EntityType.PIG_ZOMBIE);
 			} else if (args[0].equalsIgnoreCase("2")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.SKELETON);
+				target.getWorld().spawnCreature(tloc, EntityType.SKELETON);
 			} else if (args[0].equalsIgnoreCase("3")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.WOLF);
+				target.getWorld().spawnCreature(tloc, EntityType.WOLF);
 			} else if (args[0].equalsIgnoreCase("4")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.SPIDER);
+				target.getWorld().spawnCreature(tloc, EntityType.SPIDER);
 			} else if (args[0].equalsIgnoreCase("5")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.ZOMBIE);
+				target.getWorld().spawnCreature(tloc, EntityType.ZOMBIE);
 			} else if (args[0].equalsIgnoreCase("6")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.ENDERMAN);
+				target.getWorld().spawnCreature(tloc, EntityType.ENDERMAN);
 			} else if (args[0].equalsIgnoreCase("7")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.CREEPER);
+				target.getWorld().spawnCreature(tloc, EntityType.CREEPER);
 			} else if (args[0].equalsIgnoreCase("8")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.GIANT);
+				target.getWorld().spawnCreature(tloc, EntityType.GIANT);
 			} else if (args[0].equalsIgnoreCase("9")) {
-				target.getWorld().spawnCreature(tloc, CreatureType.GHAST);
+				target.getWorld().spawnCreature(tloc, EntityType.GHAST);
 			} else if (args[0].equalsIgnoreCase("10")) {
 				sender.sendMessage(a
 						+ "Congrats! You have won! Return to /cod for some more fun!");
