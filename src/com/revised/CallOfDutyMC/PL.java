@@ -3,6 +3,7 @@ package com.revised.CallOfDutyMC;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -28,14 +29,14 @@ public class PL implements Listener {
 			if (event.getAction() == Action.LEFT_CLICK_AIR) {
 				if (p.getItemInHand().getType() == Material.STICK && p.getInventory().contains(Material.ARROW)) {
 					for (int x = 0; x < 1; x++) {
-						p.shootArrow();
+						p.launchProjectile(Arrow.class);
 						p.getInventory().removeItem(i);
 						w.createExplosion(p.getLocation(), -0);
 					}
 				}
 				if (auto) {
 					for (int a = 0; a < 4; a++) {
-						p.shootArrow();
+						p.launchProjectile(Arrow.class);
 						p.getInventory().remove(new ItemStack(Material.ARROW, 1));
 					}
 					w.createExplosion(p.getLocation(), -2);
@@ -47,7 +48,7 @@ public class PL implements Listener {
 			if (event.getAction() == Action.RIGHT_CLICK_AIR) {
 				if (p.getItemInHand().getType() == Material.STICK && p.getInventory().contains(Material.ARROW)) {
 					for (int b = 0; b < 9; b++) {
-						p.shootArrow();
+						p.launchProjectile(Arrow.class);
 						p.getInventory().remove(new ItemStack(Material.ARROW, 1));
 					}
 					w.playEffect(p.getLocation(), Effect.BOW_FIRE, 6);
